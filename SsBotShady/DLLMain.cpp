@@ -5,7 +5,7 @@
 //Include the functions to loop them here...
 #include "C_Triggerbot.h"
 #include "varupdate.h"
-#include "mmc.h"
+//#include "mmc.h"
 
 HWND csgo = NULL;
 void INIT( HMODULE hModule )
@@ -45,12 +45,11 @@ void INIT( HMODULE hModule )
 
 	//threads
 	std::thread triggerThread(&C_Triggerbot::Think, C_Triggerbot());
-
-
 	//Infinite loop
 	do {
 		G::Main::Local->GetLocal();
-		Sleep(1000);
+		//C_Triggerbot->Think();
+		//Sleep(1000);
 	} while (true);
 	system( XorString( "pause" ) );
 }
@@ -62,9 +61,9 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReser
 	case DLL_PROCESS_ATTACH: 
 		HANDLE leggokek = CreateThread(nullptr, 0, reinterpret_cast<LPTHREAD_START_ROUTINE>(INIT), hModule, 0, nullptr);
 		break;
-	case DLL_PROCESS_DETACH:
-		CloseHandle(leggokek);
-		break;
+	//case DLL_PROCESS_DETACH:
+	//	CloseHandle(leggokek);
+	//	break;
 	}
 	return TRUE;
 }
