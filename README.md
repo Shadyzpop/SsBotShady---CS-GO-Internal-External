@@ -3,4 +3,4 @@ Simple skeleton SDK with a triggerbot feature and few unfinished functions as an
 
 Fully customizable to the core, feel free to fork. 
 
-note:uses a 32-bit processes to hook properly.
+note:uses a 32-bit processes to hook properly, dont inject into csgo.
