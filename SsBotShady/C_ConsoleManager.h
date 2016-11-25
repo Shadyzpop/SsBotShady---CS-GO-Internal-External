@@ -1,7 +1,4 @@
 #include "SDK.h"
-
-//Credits : Teamgamerfood
-
 #define std_con_out GetStdHandle( STD_OUTPUT_HANDLE )
 
 enum concol
